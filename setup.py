@@ -1,4 +1,5 @@
-from setuptools import setup, find_packages
+from setuptools import setup
+from setuptools import find_packages
 from typing import List
 
 with open('README.md', 'r', encoding='utf-8') as f:
