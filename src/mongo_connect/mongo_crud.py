@@ -17,7 +17,7 @@ class mongo_operation:
     __collection = None  # here i have created a private/protected variable
     __database = None
     
-    def __init__(self, client_url: str, database_name: str, collection_name: Optional[Dict[str]] = None):
+    def __init__(self, client_url: str, database_name: str, collection_name: Optional[Dict[int, str]] = None):
         self.client_url = client_url
         self.database_name = database_name
         self.collection_name = collection_name
@@ -56,7 +56,7 @@ class mongo_operation:
             collection = self.create_collection(collection_name)
             collection.insert_one(record)
     
-    def bulk_insert(self, datafile, collection_name:Optional[Dict[str]] = None):
+    def bulk_insert(self, datafile, collection_name:Optional[Dict[int, str]] = None):
         self.path = datafile
         
         if self.path.endswith('.csv'):
